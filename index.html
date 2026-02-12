@@ -4,15 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Harmonia - Accordeur de Guitare</title>
+    <link rel="icon" type="image/png" href="logo_harmonia.png">
+    
     <style>
+        /* STYLE GÉNÉRAL */
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
             background-color: #f4f4f9;
             color: #333;
+            scroll-behavior: smooth;
         }
 
+        /* HEADER & NAVIGATION */
         header {
             background-color: #000;
             color: #fff;
@@ -23,173 +28,275 @@
         }
         header h1 {
             font-family: 'Times New Roman', Times, serif;
-            font-size: 32px;
+            font-size: 35px;
             margin: 0;
             margin-bottom: 10px;
         }
-        
         nav {
             display: flex;
-            gap: 15px;
+            gap: 20px;
         }
         nav a {
             color: #fff;
             text-decoration: none;
-            font-size: 18px;
+            font-size: 20px;
         }
-        nav a:hover { color: #b0b0b0; }
+        nav a:hover {
+            color: #00ffcc;
+        }
 
-        /* --- NOUVELLE SECTION ACCÈS PROJET --- */
-        .project-access {
+        /* SECTION ACCÈS PROJET (IMAGE GAUCHE / LIEN DROITE) */
+        .project-hero {
             display: flex;
             align-items: center;
-            justify-content: space-around;
-            background: linear-gradient(135deg, #2c3e50, #000);
+            justify-content: center;
+            background: linear-gradient(135deg, #1a1a1a, #2c3e50);
             color: white;
-            padding: 40px 20px;
-            margin-bottom: 2rem;
+            padding: 60px 20px;
+            gap: 50px;
+            flex-wrap: wrap;
         }
-        .project-access img {
-            width: 40%;
-            max-width: 400px;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        .project-hero img {
+            width: 100%;
+            max-width: 500px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
-        .link-container {
-            text-align: center;
-            width: 50%;
+        .project-info {
+            max-width: 500px;
+            text-align: left;
+        }
+        .project-info h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            border: none;
+            color: #00ffcc;
         }
         .cta-button {
             display: inline-block;
             background-color: #00ffcc;
             color: #000;
-            padding: 20px 40px;
+            padding: 18px 35px;
             text-decoration: none;
             font-weight: bold;
-            font-size: 22px;
+            font-size: 1.2rem;
             border-radius: 50px;
-            transition: transform 0.2s;
+            transition: transform 0.3s, box-shadow 0.3s;
+            margin-top: 20px;
         }
-        .cta-button:hover { transform: scale(1.05); background-color: #00e6b8; }
-        /* ------------------------------------- */
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 255, 204, 0.4);
+        }
 
-        main { padding: 2rem; max-width: 1200px; margin: auto; }
-        
-        section {
-            margin-bottom: 3rem;
-            background: white;
+        /* CONTENU PRINCIPAL */
+        main {
             padding: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+            max-width: 1200px;
+            margin: auto;
+        }
+        section {
+            margin-bottom: 4rem;
+            background: white;
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+        h2 {
+            color: black;
+            margin-bottom: 1.5rem;
+            border-bottom: 3px solid #00ffcc;
+            padding-bottom: 0.5rem;
+            display: inline-block;
         }
 
-        h2 { color: black; border-bottom: 2px solid black; padding-bottom: 0.5rem; }
+        /* MEMBRES (4 COLONNES) */
+        .members {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            justify-content: space-between;
+        }
+        .member {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 1.5rem;
+            text-align: center;
+            width: calc(25% - 1.5rem); /* 4 membres par ligne */
+            min-width: 200px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        .member img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-bottom: 1rem;
+            border: 3px solid #00ffcc;
+            object-fit: cover;
+        }
+        .texte {
+            overflow: hidden;
+            transition: height 0.5s ease;
+            height: 0;
+            font-size: 0.9rem;
+            line-height: 1.4;
+            text-align: left;
+        }
+        button.view-more {
+            background: #000;
+            color: #fff;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
 
-        .members { display: flex; flex-wrap: wrap; gap: 2rem; justify-content: center; }
-        .member {
+        /* CHRONOLOGIE / TIMELINE */
+        .timeline {
+            position: relative;
+            margin: 2rem auto;
+            padding: 2rem 0;
+            width: 90%;
+            border-left: 4px solid #000;
+        }
+        .event {
+            position: relative;
+            width: 80%;
+            margin: 20px 0 20px 30px;
+            padding: 1rem 1.5rem;
             background: #ecf0f1;
             border-radius: 8px;
-            padding: 1.5rem;
-            text-align: center;
-            width: calc(25% - 2rem);
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
-        .member {
-            background: #ecf0f1;
-            border-radius: 8px;
-            padding: 1.5rem;
-            text-align: center;
-            width: calc(25% - 2rem);
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        .event::before {
+            content: "";
+            position: absolute;
+            left: -37px;
+            top: 20px;
+            width: 14px;
+            height: 14px;
+            background: #00ffcc;
+            border: 3px solid #000;
+            border-radius: 50%;
         }
-        .member {
-            background: #ecf0f1;
-            border-radius: 8px;
-            padding: 1.5rem;
-            text-align: center;
-            width: calc(25% - 2rem);
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-        .member {
-            background: #ecf0f1;
-            border-radius: 8px;
-            padding: 1.5rem;
-            text-align: center;
-            width: calc(25% - 2rem);
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-        .member img { width: 90px; height: 90px; border-radius: 50%; border: 2px solid black; }
 
-        /* Timeline Styles (conservés de votre ancien code) */
-        .timeline { position: relative; margin: 2rem auto; width: 80%; border-left: 4px solid black; padding: 2rem 0; }
-        .event { position: relative; width: 45%; margin: 1.5rem 0; padding: 1rem 2rem; background: #ecf0f1; border-radius: 8px; }
-        .event.left { transform: translateX(-110%); text-align: right; margin-left: 50%; }
-        .event.right { transform: translateX(10%); text-align: left; margin-left: 50%; }
-
-        footer { background-color: black; color: white; text-align: center; padding: 1.5rem 0; margin-top: 2rem; }
+        /* FOOTER */
+        footer {
+            background-color: black;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
 
         #scrollTop {
-            position: fixed; bottom: 25px; right: 20px; background-color: black; color: white;
-            border: none; border-radius: 50%; width: 50px; height: 50px; cursor: pointer; font-size: 2rem;
+            position: fixed;
+            bottom: 25px;
+            right: 20px;
+            background-color: #00ffcc;
+            color: black;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            font-size: 1.5rem;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
         }
 
-        .texte { overflow: hidden; transition: height 0.5s ease; height: 0; }
+        @media (max-width: 768px) {
+            .member { width: calc(50% - 1rem); }
+            .project-hero { flex-direction: column; text-align: center; }
+            .project-info { text-align: center; }
+        }
     </style>
 </head>
 <body>
+
     <header>
         <h1>HARMONIA</h1>
         <nav>
-            <a href="#members">L'Équipe</a>
-            <a href="#roadmap">Historique</a>
+            <a href="#members">Membres</a>
+            <a href="#timeline">Chronologie</a>
             <a href="#resources">Ressources</a>
         </nav>
     </header>
 
-    <section class="project-access">
-        <img src="capture_accordeur.png" alt="Aperçu de l'interface Harmonia">
-        <div class="link-container">
-            <h2>Prêt à vous accorder ?</h2>
-            <p>Accédez à l'interface graphique de notre projet de groupe.</p>
-            <br>
-            <a href="LIEN_VERS_TON_ACCORDEUR" class="cta-button">Lancer l'Accordeur</a>
+    <section class="project-hero">
+        <img src="interface_preview.png" alt="Aperçu Harmonia">
+        <div class="project-info">
+            <h2>L'accordeur de précision</h2>
+            <p>Découvrez Harmonia, notre projet de groupe dédié aux musiciens. Une interface fluide et une détection de fréquence ultra-précise pour ne plus jamais sonner faux.</p>
+            <a href="URL_DE_TON_INTERFACE" class="cta-button">Ouvrir l'Interface Graphique</a>
         </div>
     </section>
 
     <main>
         <section id="members">
-            <h2>L'Équipe du Projet</h2>
+            <h2>L'Équipe Harmonia</h2>
             <div class="members">
                 <div class="member">
-                    <img src="avatar.png" alt="Membre 1">
-                    <p><strong>Nom Prénom</strong></p>
-                    <button onclick="toggleText(this)">Voir plus</button>
+                    <img src="membre1.png" alt="Nom">
+                    <p><strong>[NOM_1]</strong></p>
+                    <button class="view-more" onclick="toggleText(this)">Voir plus</button>
                     <div class="texte">
-                        <p>Description de votre rôle dans le projet Harmonia...</p>
+                        <p>Responsable du traitement du signal et de l'algorithme de détection de notes.</p>
                     </div>
                 </div>
+                <div class="member">
+                    <img src="membre2.png" alt="Nom">
+                    <p><strong>[NOM_2]</strong></p>
+                    <button class="view-more" onclick="toggleText(this)">Voir plus</button>
+                    <div class="texte">
+                        <p>Responsable du design de l'interface graphique (GUI) et de l'expérience utilisateur.</p>
+                    </div>
                 </div>
+                <div class="member">
+                    <img src="membre3.png" alt="Nom">
+                    <p><strong>[NOM_3]</strong></p>
+                    <button class="view-more" onclick="toggleText(this)">Voir plus</button>
+                    <div class="texte">
+                        <p>Responsable de l'intégration système et de la gestion de projet.</p>
+                    </div>
+                </div>
+                <div class="member">
+                    <img src="membre4.png" alt="Nom">
+                    <p><strong>[NOM_4]</strong></p>
+                    <button class="view-more" onclick="toggleText(this)">Voir plus</button>
+                    <div class="texte">
+                        <p>Responsable du site web vitrine et de la documentation technique.</p>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <section id="timeline">
-            <h2>Chronologie du Développement</h2>
+            <h2>Historique du Développement</h2>
             <div class="timeline">
-                <div class="event left">
-                    <h3>Phase 1</h3>
-                    <p>Analyse de fréquence et traitement du signal audio.</p>
+                <div class="event">
+                    <h3>Janvier 2026</h3>
+                    <p>Lancement du projet et recherche sur les algorithmes de pitch detection (Autocorrélation).</p>
                 </div>
-                <div class="event right">
-                    <h3>Phase 2</h3>
-                    <p>Conception de l'interface graphique (GUI).</p>
+                <div class="event">
+                    <h3>Février 2026</h3>
+                    <p>Développement de l'interface graphique sous Unity/Python.</p>
                 </div>
+                <div class="event">
+                    <h3>Mars 2026</h3>
+                    <p>Tests finaux et mise en ligne du site vitrine.</p>
                 </div>
+            </div>
         </section>
 
         <section id="resources">
-            <h2>Ressources</h2>
+            <h2>Ressources Utilisées</h2>
             <ul>
-                <li>Langages : Python, C#, HTML/CSS</li>
-                <li>Outils : Visual Studio Code, Git</li>
+                <li><strong>Langages :</strong> Python, HTML, CSS, JavaScript</li>
+                <li><strong>Bibliothèques :</strong> NumPy, PyAudio (ou Web Audio API)</li>
+                <li><strong>Outils :</strong> GitHub, VS Code</li>
             </ul>
         </section>
     </main>
@@ -201,6 +308,7 @@
     <button id="scrollTop" onclick="scrollToTop()">&#8679;</button>
 
     <script>
+        // Fonction pour dérouler le texte des membres
         function toggleText(button) {
             const texte = button.nextElementSibling;
             if (!texte.classList.contains('open')) {
@@ -213,7 +321,11 @@
                 button.textContent = "Voir plus";
             }
         }
-        function scrollToTop() { window.scrollTo({ top: 0, behavior: 'smooth' }); }
+
+        // Fonction scroll to top
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
     </script>
 </body>
 </html>
