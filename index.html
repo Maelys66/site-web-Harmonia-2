@@ -1,19 +1,195 @@
-<section class="hero">
-    <div class="hero-content">
-        <h2>La précision au bout des cordes.</h2>
-        <p>Harmonia est l'outil ultime pour les guitaristes exigeants, alliant design minimaliste et algorithmes de pointe.</p>
-        
-        <a href="LIEN_VERS_VOTRE_INTERFACE" class="cta-button">Ouvrir l'Accordeur Harmonia</a>
-    </div>
-</section>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harmonia - Accordeur de Guitare</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
 
-<section id="features">
-    <div class="feature-card">
-        <h3>Précision</h3>
-        <p>Détection au centième de demi-ton près.</p>
-    </div>
-    <div class="feature-card">
-        <h3>Simplicité</h3>
-        <p>Une interface pensée pour la scène et le studio.</p>
-    </div>
-</section>
+        header {
+            background-color: #000;
+            color: #fff;
+            padding: 20px 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        header h1 {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 32px;
+            margin: 0;
+            margin-bottom: 10px;
+        }
+        
+        nav {
+            display: flex;
+            gap: 15px;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+        }
+        nav a:hover { color: #b0b0b0; }
+
+        /* --- NOUVELLE SECTION ACCÈS PROJET --- */
+        .project-access {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            background: linear-gradient(135deg, #2c3e50, #000);
+            color: white;
+            padding: 40px 20px;
+            margin-bottom: 2rem;
+        }
+        .project-access img {
+            width: 40%;
+            max-width: 400px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+        .link-container {
+            text-align: center;
+            width: 50%;
+        }
+        .cta-button {
+            display: inline-block;
+            background-color: #00ffcc;
+            color: #000;
+            padding: 20px 40px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 22px;
+            border-radius: 50px;
+            transition: transform 0.2s;
+        }
+        .cta-button:hover { transform: scale(1.05); background-color: #00e6b8; }
+        /* ------------------------------------- */
+
+        main { padding: 2rem; max-width: 1200px; margin: auto; }
+        
+        section {
+            margin-bottom: 3rem;
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 { color: black; border-bottom: 2px solid black; padding-bottom: 0.5rem; }
+
+        .members { display: flex; flex-wrap: wrap; gap: 2rem; justify-content: center; }
+        .member {
+            background: #ecf0f1;
+            border-radius: 8px;
+            padding: 1.5rem;
+            text-align: center;
+            width: calc(25% - 2rem);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .member img { width: 90px; height: 90px; border-radius: 50%; border: 2px solid black; }
+
+        /* Timeline Styles (conservés de votre ancien code) */
+        .timeline { position: relative; margin: 2rem auto; width: 80%; border-left: 4px solid black; padding: 2rem 0; }
+        .event { position: relative; width: 45%; margin: 1.5rem 0; padding: 1rem 2rem; background: #ecf0f1; border-radius: 8px; }
+        .event.left { transform: translateX(-110%); text-align: right; margin-left: 50%; }
+        .event.right { transform: translateX(10%); text-align: left; margin-left: 50%; }
+
+        footer { background-color: black; color: white; text-align: center; padding: 1.5rem 0; margin-top: 2rem; }
+
+        #scrollTop {
+            position: fixed; bottom: 25px; right: 20px; background-color: black; color: white;
+            border: none; border-radius: 50%; width: 50px; height: 50px; cursor: pointer; font-size: 2rem;
+        }
+
+        .texte { overflow: hidden; transition: height 0.5s ease; height: 0; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>HARMONIA</h1>
+        <nav>
+            <a href="#members">L'Équipe</a>
+            <a href="#roadmap">Historique</a>
+            <a href="#resources">Ressources</a>
+        </nav>
+    </header>
+
+    <section class="project-access">
+        <img src="capture_accordeur.png" alt="Aperçu de l'interface Harmonia">
+        <div class="link-container">
+            <h2>Prêt à vous accorder ?</h2>
+            <p>Accédez à l'interface graphique de notre projet de groupe.</p>
+            <br>
+            <a href="LIEN_VERS_TON_ACCORDEUR" class="cta-button">Lancer l'Accordeur</a>
+        </div>
+    </section>
+
+    <main>
+        <section id="members">
+            <h2>L'Équipe du Projet</h2>
+            <div class="members">
+                <div class="member">
+                    <img src="avatar.png" alt="Membre 1">
+                    <p><strong>Nom Prénom</strong></p>
+                    <button onclick="toggleText(this)">Voir plus</button>
+                    <div class="texte">
+                        <p>Description de votre rôle dans le projet Harmonia...</p>
+                    </div>
+                </div>
+                </div>
+        </section>
+
+        <section id="timeline">
+            <h2>Chronologie du Développement</h2>
+            <div class="timeline">
+                <div class="event left">
+                    <h3>Phase 1</h3>
+                    <p>Analyse de fréquence et traitement du signal audio.</p>
+                </div>
+                <div class="event right">
+                    <h3>Phase 2</h3>
+                    <p>Conception de l'interface graphique (GUI).</p>
+                </div>
+                </div>
+        </section>
+
+        <section id="resources">
+            <h2>Ressources</h2>
+            <ul>
+                <li>Langages : Python, C#, HTML/CSS</li>
+                <li>Outils : Visual Studio Code, Git</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Projet Harmonia. Tous droits réservés.</p>
+    </footer>
+
+    <button id="scrollTop" onclick="scrollToTop()">&#8679;</button>
+
+    <script>
+        function toggleText(button) {
+            const texte = button.nextElementSibling;
+            if (!texte.classList.contains('open')) {
+                texte.style.height = texte.scrollHeight + 'px';
+                texte.classList.add('open');
+                button.textContent = "Voir moins";
+            } else {
+                texte.style.height = '0px';
+                texte.classList.remove('open');
+                button.textContent = "Voir plus";
+            }
+        }
+        function scrollToTop() { window.scrollTo({ top: 0, behavior: 'smooth' }); }
+    </script>
+</body>
+</html>
