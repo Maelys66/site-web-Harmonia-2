@@ -1,0 +1,30 @@
+.hero {
+    padding: 100px 20px;
+    background: linear-gradient(135deg, #1a1a1a 0%, #004d40 100%);
+    text-align: center;
+}
+
+.cta-button {
+    display: inline-block;
+    background: #00ffcc;
+    color: #1a1a1a;
+    padding: 18px 35px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 50px;
+    box-shadow: 0 4px 15px rgba(0, 255, 204, 0.3);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 255, 204, 0.5);
+}
+
+#features {
+    display: flex;
+    justify-content: space-around;
+    padding: 50px;
+    background: #2d2d2d;
+}
