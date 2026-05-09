@@ -232,7 +232,12 @@
         <div class="project-info">
             <h2>L'accordeur de précision</h2>
             <p>Libérez votre son avec Harmonia ! Oubliez les accordeurs capricieux et les approximations. Notre interface a été pensée par des étudiants passionnés pour des musiciens exigeants. Simple, rapide et ultra-précis, Harmonia est l’outil indispensable pour que votre seule préoccupation reste le plaisir de jouer. L’accordage devient une formalité, la musique redevient votre priorité.</p>
-            <a href="harmonia-project-exe" class="cta-button">Ouvrir l'Interface Graphique</a>
+            <egui-plotter style="display: block; height: 200px;" />
+            <script type="module">
+                import init from 'https://github.com/jadbe5/harmonia-project/blob/main/harmonia/src/gui/mod.rs';
+                await init();
+            </script>
+            <a href="https://github.com/jadbe5/harmonia-project/blob/main/harmonia/src/gui/mod.rs" class="cta-button">Ouvrir l'Interface Graphique</a>
         </div>
     </section>
 
@@ -290,7 +295,7 @@
                     <h3>Mars 2026</h3>
                     <p>Finalisation de la première version et présentation du projet.</p>
                 </div>
-                <!--
+                
                 <div class="event">
                     <h3> Avril 2026 </h3>
                     <p> Amélioration des fonctionalités et ajout de nouvelles fonctionalités.</p>
@@ -299,7 +304,6 @@
                     <h3> Mai 2026 </h3>
                     <p>Finalisation de la version finale et présentation finale du projet.</p>
                 </div>
-                -->
 
             </div>
         </section>
